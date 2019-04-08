@@ -18,9 +18,9 @@ shinyServer(function(input, output) {
   library(viridis)
   output$rentmap <- renderPlot({
     
-    median_rents %>% 
+    rents_df%>% 
       dplyr::filter(type == input$type,
-             year == input$year) %>%
+                    year == input$year) %>%
     ggplot() +
       geom_polygon(aes(x = long, y = lat, group = group, 
                        fill = median_rent), 

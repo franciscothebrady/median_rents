@@ -68,6 +68,8 @@ median_rents <- lapply(file_list[1:6], combine_years)
 # median_rents %>% select(year == )
 # to combine the list into a big old dataframe
 rents_df <- dplyr::bind_rows(median_rents)
+# save it!
+saveRDS(rents_df, "median_rents.Rds")
 
 ### plot it on a map!
 # median_rents %>% 

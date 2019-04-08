@@ -8,14 +8,16 @@
 #
 
 library(shiny)
+library(readr)
+# load the data 
+rents_df <- readRDS("median_rents.Rds")
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title
   titlePanel("Median Rents in the United States"),
-  # load the data
-  # rents <- read_rds("data.Rds")
+  
   # Sidebar with a selectInput for Year of data 
   sidebarLayout(
     sidebarPanel(
